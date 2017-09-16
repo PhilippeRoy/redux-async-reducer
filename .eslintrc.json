@@ -7,8 +7,15 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "experimentalObjectRestSpread": true
+        }
     },
+    "plugins": [
+        "prefer-object-spread"
+    ],
     "rules": {
         "indent": [
             "error",
@@ -25,6 +32,7 @@
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "prefer-object-spread/prefer-object-spread": 2        
     }
 }
