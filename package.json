@@ -7,7 +7,7 @@
     "webpack": "webpack",
     "eslint": "eslint",
     "babel": "babel",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack -w"
   },
@@ -33,11 +33,14 @@
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^21.0.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.7.0",
+    "eslint-plugin-jest": "^21.1.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "jest": "^21.1.0",
     "webpack": "^3.6.0"
   }
 }
