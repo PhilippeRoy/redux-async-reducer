@@ -4,6 +4,7 @@
   "description": "Dynamically add reducers in Redux",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/PhilippeRoy/redux-async-reducer/issues"
   },
-  "homepage": "https://github.com/PhilippeRoy/redux-async-reducer#readme"
+  "homepage": "https://github.com/PhilippeRoy/redux-async-reducer#readme",
+  "dependencies": {
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.0"
+  }
 }
