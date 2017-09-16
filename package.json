@@ -2,10 +2,14 @@
   "name": "redux-async-reducer",
   "version": "0.0.1",
   "description": "Dynamically add reducers in Redux",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
+    "webpack": "webpack",
     "eslint": "eslint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel": "babel",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack -w"  
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,13 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
-    "eslint": "^4.7.0"
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.7.0",
+    "webpack": "^3.6.0"
   }
 }
