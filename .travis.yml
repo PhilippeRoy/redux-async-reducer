@@ -7,15 +7,6 @@ cache:
   - node_modules
 jobs:
   include:
-  - stage: Github Release
-    deploy:
-      provider: releases
-      api_key:
-        secure: pEQuwYIfR1yUhxqjFtOHwTly1XzJNy6j4r7fNzfuBqAhvEnClCnOpg4BiZ7y0oxj1vTLFcRy8PdDYtL1ecFSU84PzT9/fMleRHCR5jptm0aS6NCPytWTac0mqoz8XnkPUDWv4YB4KzpL1JBvYPxXylJCNSJ70vyHO40Hi1ZTBj8duMYFqAze8754crJyY4d5LboTxU/1KWTcrWLoaQ31X6Qr4EPyox0Ax6fhbRRThasfiIGbNiDcuCU7Q+kSNqS0/a3eN8Zu1T47EYIHQaisewDNIA71Qjgo/R0eX1hgt8CgzK2WLwqNEmBw/kCTdm3wCt3KSyWMXGaFio9Dga/VrPxPdF/CQF3QszQeSdqyQO7geQUkPKHLtYIZD4v6rAQo3+p1Nvuq7DslC5IZCCTjCXfAgN0Kudh5O8q8u71DneZ3EagiLfPtUKivGqRNY1mNnMsvhaE41c73M5U24GZmx+0JQ4xUiZ/T1hYaQjhCs3rjO/J5TLVFv79aZy02a65RiMvI/W2hgJvcuEK15Uf1vxhuZFnkwI47JY7H/C3AARSUVDQt+ismZl8cY58qBDtJPloaIHGShg23uLhSy8W5qxYlz1ITZvF5MiYeoUWCnBy1yMDRa8rKRPEmL77FfbapeWOwSa2TpnJZY1fluwkVu+BDURYflcH2NfGuuvKiZwo=
-      file: ''
-      on:
-        tags: true
-        skip_cleanup: true
   - stage: npm release
     deploy:
       provider: npm
