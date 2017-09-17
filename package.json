@@ -1,6 +1,6 @@
 {
   "name": "redux-async-reducer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dynamically add reducers in Redux",
   "main": "./src/index.js",
   "scripts": {
