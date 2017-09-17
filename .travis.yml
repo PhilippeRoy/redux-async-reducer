@@ -23,10 +23,21 @@ jobs:
     - stage: Github Release
       script: echo "Updateing GitHub tags ..."
       deploy:
-        - provider: script
-          skip_cleanup: true
-          api_key:
-          secure: dGDyUWVz/lCjad1m2mjlbX5tBwpEYvNuAIQPwlCd/Jlq7735j5IGfHa7zbtXD4imsIyqOAJxu0desSG0OQNrCSqguuNt4pyhDeiFv7Rv4T9syVQ2FXRS4RvZhREBc1sAvxE2PUP7Sqyn5EvM8/1EmLWb47ZJnE1dBc/OJYmRwtERll4BkNRaKGCTChiLfmD1Pl3Ai10fng9A+52fDOPc0JC7Mmf42cDtuUce5Y1rxhXU0c3dlGLNKlYQ7WtemssAytsiXGSCNg0uw1Kfw/IDxlg50lq4im6y1CUuZt0n+QuQ6qV8ZuY43w7p1020+ExqCb+kk9mfWhw27YilVyTpoPuK4jc+vLqxPkr/z7Wo2irVAMAk77c6TJeJ35S0NTKGaeTPZ0udTqFYKZ65uT5PSX77/5vLFlyhSzTBWxTLDQxd//B1KrLP40cXmemYrDB0SU7XwBX4e2b+CScm88Htrg7tkKtZPMoBtDIpPm7Lmo6XJXm6rv6rUPxTi8iRXqfAvaelXrignFV7w9pX2CJcABLmL3c88JAic9TBscWMaRA29UdMtIIKOgR9Xo9BnEtV+HhWr1ey7tTuYvdw9Pve/wBp3CBwvzyUW5aP9me+rSj3HEsR6xw81fMf2dFQLZJxTIL1MC7WZJ/Y2K3Qd6MilUVXOJodfLgPAc7wRI+cAM0=
-          script: git push --tags
-          on:
-            branch: master
+        provider: script
+        skip_cleanup: true
+        script: git push --tags
+        on:
+          repo: PhilippeRoy/redux-async-reducer
+          branch: master
+    - stage: npm release
+      deploy:
+        provider: npm
+        email: philippe.j.roy@gmail.com
+        api_key:
+          secure: hC93XR7oresvi3o7lGdfo7Jgi3BH09NV2I4WCWmO3E/iBgu2LNA4vP97AgiHzMBkyVSEs2fu+0BAqqeOc9CLC4cdC4JpC8TCKD8B+/qu8rQXXh7Q8KwQMhxkKM2T9CzuFUGMSXYBvy7kW2cmf8BWJ/wKJ9ucOj7MTN4jOVc5vv1cR+mULCJEy9Xqa1hlyay+3JBPZcZxVwIIUBFILq/Qf+4oXD98p0vmE77rWmCB2gN425ZfbCTucVI1HRzzaBbm74VuwpAuyLr36qRRwZjU8ZwOAEjrGCKdKQ/09e0ntchLgeId83Rv3B2jA7oY3qdrON0QibneY4tYsVnnYPWBNWwGB22Su2VouKUo8g04FeF+7vvrrNJCauloL/iaWXyjK95jrribJbPtSSdKX4nT8nX9D1xzoKkNlm1K1n72wCL1f6d+c5DCxJImcRV+mKN5OFy4QxmFwUhxvLLFaNSICm334bnxshJF8WEwURAsLcenAFFSmTGFeceVBWE4k0CYNlegQeVe/cLW1OWpQipwa0d6EEcXDO1wTtji4X75HO76awy02HQEaZRN+/hthXqi12TjGRvw7y6qsJj3u/Yf4k3W8nXBBPw7WvL6pngr//DOVLVa/NWcHddoy8dhENykQP2Wg2dG13Nfh394nS407Ch8xY8kG5JBZwpZFazbG7M=
+        on:
+          tags: true
+          repo: PhilippeRoy/redux-async-reducer
+          branch: master
+
+            
