@@ -25,6 +25,8 @@ jobs:
       deploy:
         - provider: script
           skip_cleanup: true
+          api_key:
+          secure: dGDyUWVz/lCjad1m2mjlbX5tBwpEYvNuAIQPwlCd/Jlq7735j5IGfHa7zbtXD4imsIyqOAJxu0desSG0OQNrCSqguuNt4pyhDeiFv7Rv4T9syVQ2FXRS4RvZhREBc1sAvxE2PUP7Sqyn5EvM8/1EmLWb47ZJnE1dBc/OJYmRwtERll4BkNRaKGCTChiLfmD1Pl3Ai10fng9A+52fDOPc0JC7Mmf42cDtuUce5Y1rxhXU0c3dlGLNKlYQ7WtemssAytsiXGSCNg0uw1Kfw/IDxlg50lq4im6y1CUuZt0n+QuQ6qV8ZuY43w7p1020+ExqCb+kk9mfWhw27YilVyTpoPuK4jc+vLqxPkr/z7Wo2irVAMAk77c6TJeJ35S0NTKGaeTPZ0udTqFYKZ65uT5PSX77/5vLFlyhSzTBWxTLDQxd//B1KrLP40cXmemYrDB0SU7XwBX4e2b+CScm88Htrg7tkKtZPMoBtDIpPm7Lmo6XJXm6rv6rUPxTi8iRXqfAvaelXrignFV7w9pX2CJcABLmL3c88JAic9TBscWMaRA29UdMtIIKOgR9Xo9BnEtV+HhWr1ey7tTuYvdw9Pve/wBp3CBwvzyUW5aP9me+rSj3HEsR6xw81fMf2dFQLZJxTIL1MC7WZJ/Y2K3Qd6MilUVXOJodfLgPAc7wRI+cAM0=
           script: git push --tags
           on:
             branch: master
