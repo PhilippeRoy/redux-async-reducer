@@ -15,6 +15,7 @@ jobs:
       file: ''
       on:
         tags: true
+        skip_cleanup: true
         repo: PhilippeRoy/redux-async-reducer
         branch: master
   - stage: npm release
@@ -27,4 +28,3 @@ jobs:
         tags: true
         repo: PhilippeRoy/redux-async-reducer
         branch: master
-
