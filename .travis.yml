@@ -17,7 +17,10 @@ jobs:
         tags: true
         skip_cleanup: true
         repo: PhilippeRoy/redux-async-reducer
-        branch: master
+        branches:
+          only:
+            - master
+            - /v\d+\.\d+[a-z]/
   - stage: npm release
     deploy:
       provider: npm
@@ -27,4 +30,7 @@ jobs:
       on:
         tags: true
         repo: PhilippeRoy/redux-async-reducer
-        branch: master
+        branches:
+          only:
+            - master
+            - /v\d+\.\d+[a-z]/
