@@ -20,8 +20,6 @@ before_install:
 
 jobs:
   include:
-    - stage: Tests
-      script: "Running Tests"
     - stage: Github Release
       script: echo "Updateing GitHub tags ..."
       deploy:
