@@ -1,7 +1,9 @@
 {
     "plugins": ["transform-object-rest-spread"],
     "env": {
-      "es": {
-      }
+        "es": {},
+        "test": {
+          "presets": ["env"]         
+        }
     }
 }
