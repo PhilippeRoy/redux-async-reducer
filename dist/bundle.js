@@ -68,18 +68,17 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(6);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "applyMiddleware", function() { return __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "compose", function() { return __WEBPACK_IMPORTED_MODULE_4__compose__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
+/* unused harmony reexport bindActionCreators */
+/* unused harmony reexport applyMiddleware */
+/* unused harmony reexport compose */
 
 
 
@@ -731,47 +730,34 @@ function compose() {
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["createStore"] = createStore;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducerRegistry__ = __webpack_require__(24);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.createStore = createStore;
 
-var _redux = __webpack_require__(0);
 
-var _reducerRegistry = __webpack_require__(24);
-
-var _reducerRegistry2 = _interopRequireDefault(_reducerRegistry);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function createStore(reducer, preloadedState, enhancer) {
 
     // Reducer must be an object
     //TODO: throw error if not an object
 
-    var reducerRegistry = new _reducerRegistry2.default(reducer);
+    const reducerRegistry = new __WEBPACK_IMPORTED_MODULE_1__reducerRegistry__["a" /* default */](reducer);
 
-    var store = (0, _redux.createStore)(reducerRegistry.getCombinedRegistry(), preloadedState, enhancer);
+    const store = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* createStore */])(reducerRegistry.getCombinedRegistry(), preloadedState, enhancer);
 
     return _extends({}, store, {
-        addReducer: function addReducer(name, reducer) {
+        addReducer: (name, reducer) => {
             reducerRegistry.add(name, reducer);
             return store.replaceReducer(reducerRegistry.getCombinedRegistry());
         },
-        getReducers: function getReducers() {
-            return reducerRegistry.getRegistry();
-        },
-        getCombinedReducers: function getCombinedReducers() {
-            return reducerRegistry.getCombinedRegistry();
-        }
+        getReducers: () => reducerRegistry.getRegistry(),
+        getCombinedReducers: () => reducerRegistry.getCombinedRegistry()
     });
 }
 
@@ -1243,7 +1229,7 @@ function combineReducers(reducers) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = bindActionCreators;
+/* unused harmony export default */
 function bindActionCreator(actionCreator, dispatch) {
   return function () {
     return dispatch(actionCreator.apply(undefined, arguments));
@@ -1297,7 +1283,7 @@ function bindActionCreators(actionCreators, dispatch) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
+/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(7);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -1350,52 +1336,33 @@ function applyMiddleware() {
 
 /***/ }),
 /* 24 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(0);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _redux = __webpack_require__(0);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ReducerRegistry = function () {
-    function ReducerRegistry(rootReducer) {
-        _classCallCheck(this, ReducerRegistry);
-
+class ReducerRegistry {
+    constructor(rootReducer) {
         this._registry = _extends({}, rootReducer);
     }
 
-    _createClass(ReducerRegistry, [{
-        key: 'add',
-        value: function add(name, reducer) {
-            //TODO: should be allowed to pass object and iterate through
-            this._registry[name] = reducer;
-        }
-    }, {
-        key: 'getRegistry',
-        value: function getRegistry() {
-            return _extends({}, this._registry);
-        }
-    }, {
-        key: 'getCombinedRegistry',
-        value: function getCombinedRegistry() {
-            return (0, _redux.combineReducers)(_extends({}, this._registry));
-        }
-    }]);
+    add(name, reducer) {
+        this._registry[name] = reducer;
+    }
 
-    return ReducerRegistry;
-}();
+    getRegistry() {
+        return _extends({}, this._registry);
+    }
 
-exports.default = ReducerRegistry;
+    getCombinedRegistry() {
+        return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* combineReducers */])(_extends({}, this._registry));
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = ReducerRegistry;
+
 
 /***/ })
 /******/ ]);
