@@ -1,15 +1,21 @@
 {
   "name": "redux-async-reducer",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Dynamically add reducers in Redux",
-  "main": "./src/index.js",
+  "main": "dist/bundle.js",
+  "module": "es/index.js",
   "scripts": {
+    "jest": "jest",
     "webpack": "webpack",
     "eslint": "eslint",
     "babel": "babel",
     "test": "jest",
+    "test:cov": "npm test -- --coverage",
+    "test:watch": "npm test -- --watch",
     "build": "webpack",
-    "watch": "webpack -w"
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "watch": "webpack -w",
+    "prepublish": "npm test && npm build && npm run build:es"
   },
   "repository": {
     "type": "git",
@@ -37,6 +43,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
     "eslint": "^4.7.0",
     "eslint-plugin-jest": "^21.1.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",

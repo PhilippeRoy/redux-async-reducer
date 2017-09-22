@@ -7,17 +7,6 @@ cache:
   - node_modules
 jobs:
   include:
-  - stage: Github Release
-    deploy:
-      provider: releases
-      api_key:
-        secure: pEQuwYIfR1yUhxqjFtOHwTly1XzJNy6j4r7fNzfuBqAhvEnClCnOpg4BiZ7y0oxj1vTLFcRy8PdDYtL1ecFSU84PzT9/fMleRHCR5jptm0aS6NCPytWTac0mqoz8XnkPUDWv4YB4KzpL1JBvYPxXylJCNSJ70vyHO40Hi1ZTBj8duMYFqAze8754crJyY4d5LboTxU/1KWTcrWLoaQ31X6Qr4EPyox0Ax6fhbRRThasfiIGbNiDcuCU7Q+kSNqS0/a3eN8Zu1T47EYIHQaisewDNIA71Qjgo/R0eX1hgt8CgzK2WLwqNEmBw/kCTdm3wCt3KSyWMXGaFio9Dga/VrPxPdF/CQF3QszQeSdqyQO7geQUkPKHLtYIZD4v6rAQo3+p1Nvuq7DslC5IZCCTjCXfAgN0Kudh5O8q8u71DneZ3EagiLfPtUKivGqRNY1mNnMsvhaE41c73M5U24GZmx+0JQ4xUiZ/T1hYaQjhCs3rjO/J5TLVFv79aZy02a65RiMvI/W2hgJvcuEK15Uf1vxhuZFnkwI47JY7H/C3AARSUVDQt+ismZl8cY58qBDtJPloaIHGShg23uLhSy8W5qxYlz1ITZvF5MiYeoUWCnBy1yMDRa8rKRPEmL77FfbapeWOwSa2TpnJZY1fluwkVu+BDURYflcH2NfGuuvKiZwo=
-      file: ''
-      on:
-        tags: true
-        skip_cleanup: true
-        repo: PhilippeRoy/redux-async-reducer
-        branch: master
   - stage: npm release
     deploy:
       provider: npm
@@ -26,5 +15,3 @@ jobs:
         secure: hC93XR7oresvi3o7lGdfo7Jgi3BH09NV2I4WCWmO3E/iBgu2LNA4vP97AgiHzMBkyVSEs2fu+0BAqqeOc9CLC4cdC4JpC8TCKD8B+/qu8rQXXh7Q8KwQMhxkKM2T9CzuFUGMSXYBvy7kW2cmf8BWJ/wKJ9ucOj7MTN4jOVc5vv1cR+mULCJEy9Xqa1hlyay+3JBPZcZxVwIIUBFILq/Qf+4oXD98p0vmE77rWmCB2gN425ZfbCTucVI1HRzzaBbm74VuwpAuyLr36qRRwZjU8ZwOAEjrGCKdKQ/09e0ntchLgeId83Rv3B2jA7oY3qdrON0QibneY4tYsVnnYPWBNWwGB22Su2VouKUo8g04FeF+7vvrrNJCauloL/iaWXyjK95jrribJbPtSSdKX4nT8nX9D1xzoKkNlm1K1n72wCL1f6d+c5DCxJImcRV+mKN5OFy4QxmFwUhxvLLFaNSICm334bnxshJF8WEwURAsLcenAFFSmTGFeceVBWE4k0CYNlegQeVe/cLW1OWpQipwa0d6EEcXDO1wTtji4X75HO76awy02HQEaZRN+/hthXqi12TjGRvw7y6qsJj3u/Yf4k3W8nXBBPw7WvL6pngr//DOVLVa/NWcHddoy8dhENykQP2Wg2dG13Nfh394nS407Ch8xY8kG5JBZwpZFazbG7M=
       on:
         tags: true
-        repo: PhilippeRoy/redux-async-reducer
-        branch: master
