@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "module": "es/index.js",
   "scripts": {
+    "jest": "jest",
     "webpack": "webpack",
     "eslint": "eslint",
     "babel": "babel",
