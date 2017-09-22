@@ -9,7 +9,7 @@
     "webpack": "webpack",
     "eslint": "eslint",
     "babel": "babel",
-    "test": "jest",
+    "test": "npm run jest",
     "test:cov": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
     "build": "webpack",
