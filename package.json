@@ -1,6 +1,6 @@
 {
   "name": "redux-async-reducer",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Dynamically add reducers in Redux",
   "main": "dist/bundle.js",
   "module": "es/index.js",
@@ -15,7 +15,7 @@
     "build": "webpack",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "watch": "webpack -w",
-    "prepublish": "npm test && npm build && npm run build:es"
+    "prepublish": "npm build && npm run build:es"
   },
   "repository": {
     "type": "git",
