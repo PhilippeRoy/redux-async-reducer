@@ -1,6 +1,6 @@
 {
   "name": "redux-async-reducer",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Dynamically add reducers in Redux",
   "main": "dist/bundle.js",
   "module": "es/index.js",
